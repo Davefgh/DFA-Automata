@@ -84,6 +84,9 @@ const inputEl = document.getElementById("input-string");
 const runBtn = document.getElementById("run-btn");
 const resetBtn = document.getElementById("reset-btn");
 const resultMessageEl = document.getElementById("result-message");
+const hintBtn = document.getElementById("hint-btn");
+const hintModal = document.getElementById("hint-modal");
+const hintClose = document.getElementById("hint-close");
 
 let currentChallengeIndex = 0;
 let currentDFA = null;
@@ -210,6 +213,26 @@ resetBtn.addEventListener("click", () => {
 inputEl.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
     runSimulation();
+  }
+});
+
+function openHint() {
+  if (!hintModal) return;
+  hintModal.classList.add("open");
+  hintModal.setAttribute("aria-hidden", "false");
+}
+
+function closeHint() {
+  if (!hintModal) return;
+  hintModal.classList.remove("open");
+  hintModal.setAttribute("aria-hidden", "true");
+}
+
+hintBtn?.addEventListener("click", openHint);
+hintClose?.addEventListener("click", closeHint);
+hintModal?.addEventListener("click", (e) => {
+  if (e.target === hintModal || e.target.classList.contains("hint-backdrop")) {
+    closeHint();
   }
 });
 
