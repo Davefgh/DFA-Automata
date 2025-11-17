@@ -309,19 +309,6 @@ This project is open source and available for educational purposes.
 
 ---
 
-## 📸 Screenshots
-
-### Main Interface
-![Main Interface](assets/images/screenshot-main.png)
-
-### Processing Animation
-![Processing](assets/images/screenshot-processing.png)
-
-### Result Display
-![Result](assets/images/screenshot-result.png)
-
----
-
 ## 🎓 Educational Use
 
 This project is designed for:
