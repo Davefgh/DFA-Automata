@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Regex Runner - DFA Challenge</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="top-bar">
+      <div class="brand">
+        <div class="brand-icon">🏅</div>
+        <div>
+          <h1 class="title">Regex Runner - DFA Challenge</h1>
+          <p class="subtitle">Master the Language of Automata!</p>
+        </div>
+      </div>
+      <div class="top-stats">
+        <div class="stat-card">
+          <span class="stat-label">Score</span>
+          <span id="score" class="stat-value">0</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Level</span>
+          <span id="level" class="stat-value">1</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="panel">
+        <h2 class="panel-title">Current Challenge</h2>
+        <p id="challenge-name" class="challenge-name">Strings with even number of 1s</p>
+        <p id="challenge-description" class="challenge-description">
+          Accept strings with an even number of 1s.
+        </p>
+        <p class="challenge-examples">
+          <span>Examples:</span>
+          <span id="challenge-examples">00, 11, 0110</span>
+        </p>
+      </section>
+
+      <section class="panel dfa-panel">
+        <h2 class="panel-title">DFA States</h2>
+        <div id="dfa-states" class="dfa-states">
+          <!-- States rendered by script.js -->
+        </div>
+      </section>
+
+      <section class="panel input-panel">
+        <h2 class="panel-title">Input String (0s and 1s only):</h2>
+        <div class="input-row">
+          <input
+            id="input-string"
+            class="text-input"
+            type="text"
+            placeholder="e.g. 0110"
+            autocomplete="off"
+          />
+          <button id="run-btn" class="btn btn-run">Run</button>
+          <button id="reset-btn" class="btn btn-reset">Reset</button>
+        </div>
+        <p id="result-message" class="result-message"></p>
+      </section>
+
+      <section class="panel info-panel">
+        <h2 class="panel-title">How to Play</h2>
+        <ul class="how-to-list">
+          <li>Enter a binary string (0s and 1s only).</li>
+          <li>Click <strong>Run</strong> to watch the DFA process your input.</li>
+          <li>The automaton accepts strings with an even number of 1s (for this level).</li>
+          <li>Earn points for correct strings!</li>
+          <li>Try examples: <code>00</code>, <code>11</code>, <code>0110</code>.</li>
+          <li>Counter-examples: <code>1</code>, <code>101</code>, <code>001</code> should be rejected.</li>
+        </ul>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
