@@ -25,14 +25,11 @@
           <span class="stat-label">Level</span>
           <span id="level" class="stat-value">1</span>
         </div>
-        <button id="hint-btn" class="hint-button" aria-label="How to play">
-          ?
-        </button>
       </div>
     </header>
 
     <main class="layout">
-      <section class="panel">
+      <section class="panel panel-challenge">
         <h2 class="panel-title">Current Challenge</h2>
         <p id="challenge-name" class="challenge-name">Strings with even number of 1s</p>
         <p id="challenge-description" class="challenge-description">
@@ -68,23 +65,25 @@
       </section>
 
     </main>
+  </div>
 
-    <div id="hint-modal" class="hint-modal" aria-hidden="true">
-      <div class="hint-backdrop"></div>
-      <div class="hint-content" role="dialog" aria-modal="true" aria-labelledby="hint-title">
-        <div class="hint-header">
-          <h2 id="hint-title">How to Play</h2>
-          <button id="hint-close" class="hint-close" aria-label="Close how to play">&times;</button>
-        </div>
-        <ul class="how-to-list">
-          <li>Enter a binary string (0s and 1s only) in the input field.</li>
-          <li>Click <strong>Run</strong> to watch the DFA move through its states.</li>
-          <li>If the final state is accepting, your string is <strong>Accepted</strong>; otherwise it is <strong>Rejected</strong>.</li>
-          <li>For this level, the DFA accepts strings with an even number of <code>1</code>s.</li>
-          <li>Try examples: <code>00</code>, <code>11</code>, <code>0110</code> (Accepted).</li>
-          <li>Counter‑examples: <code>1</code>, <code>101</code>, <code>001</code> (Rejected).</li>
-        </ul>
+  <button id="hint-btn" class="hint-button" aria-label="How to play">?</button>
+
+  <div id="hint-modal" class="hint-modal" aria-hidden="true">
+    <div class="hint-backdrop"></div>
+    <div class="hint-content" role="dialog" aria-modal="true" aria-labelledby="hint-title">
+      <div class="hint-header">
+        <h2 id="hint-title">How to Play</h2>
+        <button id="hint-close" class="hint-close" aria-label="Close how to play">&times;</button>
       </div>
+      <ul class="how-to-list">
+        <li>Enter a binary string (0s and 1s only) in the input field.</li>
+        <li>Click <strong>Run</strong> to watch the DFA move through its states.</li>
+        <li>If the final state is accepting, your string is <strong>Accepted</strong>; otherwise it is <strong>Rejected</strong>.</li>
+        <li>For this level, the DFA accepts strings with an even number of <code>1</code>s.</li>
+        <li>Try examples: <code>00</code>, <code>11</code>, <code>0110</code> (Accepted).</li>
+        <li>Counter‑examples: <code>1</code>, <code>101</code>, <code>001</code> (Rejected).</li>
+      </ul>
     </div>
   </div>
 

@@ -28,10 +28,10 @@ body {
 }
 
 .app-shell {
-  max-width: 960px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 16px 12px 24px;
-  transform: scale(1.5);
+  padding: 24px 16px 40px;
+  transform: scale(1.25);
   transform-origin: top center;
 }
 
@@ -81,7 +81,6 @@ body {
 .top-stats {
   display: flex;
   gap: 10px;
-  align-items: center;
 }
 
 .stat-card {
@@ -109,7 +108,7 @@ body {
 .layout {
   margin-top: 18px;
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto auto;
   gap: 14px;
 }
@@ -120,6 +119,18 @@ body {
   background: rgba(15, 23, 42, 0.93);
   border: 1px solid var(--border-subtle);
   box-shadow: 0 18px 30px rgba(15, 23, 42, 0.75);
+}
+
+.panel-challenge {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Ensure the two top cards (Current Challenge + DFA States) have the same height */
+.panel-challenge,
+.dfa-panel {
+  height: 230px;
 }
 
 .panel-title {
@@ -162,15 +173,15 @@ body {
   margin-top: 10px;
   display: flex;
   justify-content: center;
-  gap: 28px;
+  gap: 40px;
   align-items: center;
   padding: 12px 4px 2px;
 }
 
 .dfa-state {
   position: relative;
-  width: 96px;
-  height: 96px;
+  width: 108px;
+  height: 108px;
   border-radius: 999px;
   border: 3px solid rgba(148, 163, 184, 0.6);
   display: flex;
@@ -326,9 +337,11 @@ body {
 }
 
 .hint-button {
-  margin-left: 6px;
-  width: 32px;
-  height: 32px;
+  position: fixed;
+  top: 24px;
+  right: 32px;
+  width: 34px;
+  height: 34px;
   border-radius: 999px;
   border: 1px solid #1f2937;
   background: radial-gradient(circle at 30% 0, #0f172a, #020617 60%);
@@ -341,6 +354,7 @@ body {
   justify-content: center;
   box-shadow: 0 6px 12px rgba(15, 23, 42, 0.8);
   transition: background 0.12s ease, transform 0.08s ease, box-shadow 0.08s ease;
+  z-index: 50;
 }
 
 .hint-button:hover {
@@ -376,9 +390,9 @@ body {
 
 .hint-content {
   position: relative;
-  max-width: 420px;
-  width: 90%;
-  padding: 18px 20px 18px;
+  max-width: 560px;
+  width: 92%;
+  padding: 22px 26px 22px;
   border-radius: 14px;
   background: #020617;
   border: 1px solid #1f2937;
@@ -413,7 +427,7 @@ body {
 .how-to-list {
   margin: 4px 0 0;
   padding-left: 18px;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: var(--text-soft);
 }
 
@@ -431,23 +445,15 @@ code {
   border: 1px solid #111827;
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1400px) {
+  .app-shell {
+    transform: scale(1.05);
+  }
+}
+
+@media (max-width: 1100px) {
   .app-shell {
     transform: scale(1);
-  }
-
-  .top-bar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .layout {
-    grid-template-columns: 1fr;
-  }
-
-  .dfa-panel {
-    grid-row: auto;
   }
 }
 
